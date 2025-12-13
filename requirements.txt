@@ -3,3 +3,4 @@ tqdm>=4.66.0
 pycryptodome>=3.20.0
 lz4>=4.3.2
 regex>=2023.10.0
+apsw>=3.40.0

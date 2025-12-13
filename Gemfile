@@ -11,3 +11,5 @@ gem "toml-rb", "~> 4.1"
 gem "httparty", "~> 0.23.2"
 
 gem "fileutils", "~> 1.8"
+
+gem "sqlite3", "~> 2.8"
