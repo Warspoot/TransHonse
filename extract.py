@@ -50,7 +50,30 @@ else:
     GAME_META_FILE = GAME_ROOT.joinpath("meta")
 
 SUPPORTED_TYPES = ["story", "home", "race", "lyrics", "preview", "ruby", "mdb"]
-TARGET_TYPES = SUPPORTED_TYPES[:-2]
+TARGET_TYPES = ["story", "home", "lyrics", "preview"]
+TYPE_CONFIG = {
+    "story": {
+        "no_wrap": False,
+        "pattern": lambda s: f"story/data/{s.group}/{s.id}/storytimeline%{s.idx}",
+        "filename": lambda s, _: f"storytimeline_{s}.json",
+    },
+    "home": {
+        "no_wrap": True,
+        "pattern": lambda s: f"home/data/{s.set}/{s.group}/hometimeline_{s.set}_{s.group}_{s.id}{s.idx}%",
+        "filename": lambda s, _: f"hometimeline_{s.set}_{s.group}_{s.id}{s.idx}.json",
+    },
+    "lyrics": {
+        "no_wrap": False,
+        "pattern": lambda s: f"live/musicscores/m{s.id}/m{s.id}_lyrics",
+        "filename": lambda s, _: f"{s.id}.json",
+    },
+    "preview": {
+        "no_wrap": False,
+        "pattern": lambda s: f"outgame/announceevent/loguiasset/ast_announce_event_log_ui_asset_0{s.id}",
+        "filename": lambda s, title: f"{s.id} ({title}).json" if title else f"{s.id}.json",
+    },
+}
+
 # Keys
 DB_KEY = "9c2bab97bcf8c0c4f1a9ea7881a213f6c9ebf9d8d4c6a8e43ce5a259bde7e9fd"
 BUNDLE_BASE_KEY = "532b4631e4a7b9473e7cfb"
@@ -283,9 +306,18 @@ class StoryId:
         raise AttributeError("No Index available")
 
 class GameBundle:
+    @staticmethod
+    def is_patched(path: Path) -> bool:
+        try:
+            with open(path, "rb") as f:
+                f.seek(-2, os.SEEK_END)
+                return f.read(2) == GameBundle.editMark
+        except Exception:
+            return False
+
     editMark = b"\x08\x04"
 
-    def __init__(self, path, load=True, bType="story", bundle_key=0) -> None:
+    def __init__(self, path, load=False, bType="story", bundle_key=0) -> None:
         self.bundlePath = Path(path)
         self.bundleName = self.bundlePath.stem
         self.bundleType = bType
@@ -330,23 +362,17 @@ class GameBundle:
             except Exception:
                 continue
         # Set assets map
-        if self.rootAsset and hasattr(self.rootAsset, "assets_file"):
-            self.assets = self.rootAsset.assets_file.files
-        elif self.rootAsset and hasattr(self.rootAsset, "file"):
-            self.assets = self.rootAsset.file.files
-        else:
-            self.assets = {}
-        
+        self.assets = self._resolve_assets()
 
-        # Set assets map
-        if hasattr(self.rootAsset, "assets_file"):
-            self.assets = self.rootAsset.assets_file.files
-        elif hasattr(self.rootAsset, "file"):
-             self.assets = self.rootAsset.file.files
-        else:
-             self.assets = {}
-
-        return self
+    
+    def _resolve_assets(self):
+        root = self.rootAsset
+        if not root:
+            return {}
+        return (
+            getattr(getattr(root, "assets_file", None), "files", None)
+            or getattr(getattr(root, "file", None), "files", {})
+        )
 
     def _decrypt(self, data: bytes):
         final_key = self._create_final_key()
@@ -396,7 +422,7 @@ class Args(argparse.ArgumentParser):
         self.add_argument("-id", help="The id (subgroup) to process")
         self.add_argument("-idx", help="The specific asset index to process")
         self.add_argument("-sid", "--story", help="The storyid to process")
-        self.add_argument("-dst", type=Path, default=Path("translations"), help="Output directory")
+        self.add_argument("-dst", type=Path, default=Path("raw"), help="Output directory")
         self.add_argument("-O", "--overwrite", action="store_true", help="Overwrite existing files")
         self.add_argument("-w", "--workers", type=int, default=4, help="Parallel workers")
         self.add_argument("-meta", type=Path, default=None, help="Explicit path to decrypted meta")
@@ -421,23 +447,18 @@ class Args(argparse.ArgumentParser):
 # EXTRACTION LOGIC
 # ==========================================
 def queryDB(db, storyId: StoryId):
-    qId = StoryId.queryfy(storyId)
-    
-    if qId.type == "story":
-        pattern = f"{qId.type}/data/{qId.group}/{qId.id}/{qId.type}timeline%{qId.idx}"
-    elif qId.type == "home":
-        pattern = f"{qId.type}/data/{qId.set}/{qId.group}/{qId.type}timeline_{qId.set}_{qId.group}_{qId.id}{qId.idx}%"
-    elif qId.type == "race":
-        pattern = f"{qId.type}/storyrace/text/storyrace_{qId.group}{qId.id}{qId.idx}%"
-    elif qId.type == "lyrics":
-        pattern = f"live/musicscores/m{qId.id}/m{qId.id}_lyrics"
-    elif qId.type == "preview":
-        pattern = f"outgame/announceevent/loguiasset/ast_announce_event_log_ui_asset_0{qId.id}"
-    else:
+    cfg = TYPE_CONFIG.get(storyId.type)
+    if not cfg:
         return []
 
-    cur = db.execute(f"SELECT h, n, e FROM a WHERE n LIKE '{pattern}';")
-    return cur.fetchall()
+    qid = StoryId.queryfy(storyId)
+    pattern = cfg["pattern"](qid)
+
+    return db.execute(
+        "SELECT h, n, e FROM a WHERE n LIKE ?;",
+        (pattern,),
+    ).fetchall()
+
 
 def extractText(assetType, obj):
     if assetType == "race":
@@ -459,6 +480,20 @@ def extractText(assetType, obj):
         return o if o["jpText"] else None
     return None
 
+def normalize_block(data):
+    block = {
+        "name": data.get("jpName", ""),
+        "text": data.get("jpText", ""),
+    }
+
+    if "choices" in data:
+        choices = [c["jpText"] for c in data["choices"] if c.get("jpText")]
+        if choices:
+            block["choice_data_list"] = choices
+
+    return block
+
+
 def extractAsset(asset: GameBundle, storyId: StoryId, current_args) -> Union[None, str]:
     asset.load()
     
@@ -474,7 +509,7 @@ def extractAsset(asset: GameBundle, storyId: StoryId, current_args) -> Union[Non
     
     export = {
         "title": tree.get("Title", ""),
-        "no_wrap": True if current_args.type == "home" else False,
+        "no_wrap": TYPE_CONFIG[current_args.type]["no_wrap"],
         "text_block_list": []
     }
 
@@ -533,43 +568,67 @@ def extractAsset(asset: GameBundle, storyId: StoryId, current_args) -> Union[Non
 
 def exportAsset(bundle_hash, unity_path, bundle_key, current_args):
     print(f"Processing: {bundle_hash}", flush=True)
+
     storyId = StoryId.parseFromPath(current_args.type, unity_path)
-    
+
+    # -------------------------
+    # Resolve export directory
+    # -------------------------
     exportDir = current_args.dst.joinpath(current_args.type)
     if current_args.type not in ("lyrics", "preview"):
         exportDir = exportDir.joinpath(storyId.asPath())
-    
+
+    # -------------------------
+    # Skip if output exists
+    # -------------------------
     if not current_args.overwrite:
         if current_args.type == "story":
-             if exportDir.joinpath(f"storytimeline_{storyId}.json").exists():
-                 return None
+            if exportDir.joinpath(f"storytimeline_{storyId}.json").exists():
+                return None
         elif current_args.type == "home":
-             if exportDir.joinpath(f"hometimeline_{storyId.set}_{storyId.group}_{storyId.id}{storyId.idx}.json").exists():
-                 return None
+            if exportDir.joinpath(
+                f"hometimeline_{storyId.set}_{storyId.group}_{storyId.id}{storyId.idx}.json"
+            ).exists():
+                return None
         else:
-             if any(exportDir.glob(f"{storyId.getFilenameIdx()}*.json")):
+            if any(exportDir.glob(f"{storyId.getFilenameIdx()}*.json")):
                 return None
 
-    asset = GameBundle.fromName(bundle_hash, load=False, bundle_key=bundle_key)
-    if not asset.exists:
-        return None
-    
-    if asset.isPatched:
-         return None
+    # -------------------------
+    # Resolve bundle path EARLY
+    # -------------------------
+    bundle_path = Path(GameBundle.createPath(GAME_ASSET_ROOT, bundle_hash))
 
+    if not bundle_path.exists():
+        return None
+
+    if GameBundle.is_patched(bundle_path):
+        return None
+
+    # -------------------------
+    # Create bundle (NO LOAD)
+    # -------------------------
+    asset = GameBundle(bundle_path, load=False, bundle_key=bundle_key)
+
+    # -------------------------
+    # Extract
+    # -------------------------
     try:
         result = extractAsset(asset, storyId, current_args)
         if not result:
             return None
         outData, filename = result
     except Exception as e:
-        # LOG THE ERROR so we see why it failed!
         print(f"ERROR: Failed extracting {bundle_hash}: {e}", flush=True)
         return None
 
+    # -------------------------
+    # Write output
+    # -------------------------
     exportDir.mkdir(parents=True, exist_ok=True)
     writeJson(exportDir.joinpath(filename), outData)
     return filename
+
 
 def main():
     args = Args("Extract Game Assets to Hachimi-style JSON").parse_args()
