@@ -2,6 +2,7 @@ require 'json'
 require 'uri'
 require 'httparty'
 require 'toml-rb'
+require 'fileutils'
 
 config = TomlRB.load_file('config.toml')
 $server = config['server']
@@ -34,7 +35,9 @@ def iterate_json(file_path)
         enText = translate_api(text['text'])  
         puts "Translated Line ##{text_index}" 
         puts "Name: #{enName}\nText: #{enText}"
-    
+        #write to save
+        text["name"] = enName
+        text["text"] = enText
 
         (text['choice_data_list'] || []).each_with_index do |choices, choice_index|
             #raw choices info
@@ -43,8 +46,16 @@ def iterate_json(file_path)
             #choice translation logic
             enChoice = translate_api(choices)
             puts "Translated Choice #{choice_index}: #{enChoice}"
+            #write to save
+            text['choice_data_list'][choice_index] = enChoice 
         end
     end
+    sliced_path = file_path.byteslice(4, 256)
+    output_path = File.join("translated", sliced_path)
+    output_dir = File.dirname(output_path)
+    FileUtils.mkdir_p(output_dir)
+    File.write(output_path, JSON.dump(JSON.pretty_generate(file_json)))
+    puts "Saved to: #{output_path}"
 end
 
 def translate_api(rawText)
@@ -74,4 +85,25 @@ def translate_api(rawText)
     return returned_response
 end
 
-iterate_json('example.json')
+def trans_loop(target_folder)
+  unless Dir.exist?(target_folder)
+    puts "Folder does not exist"
+    return
+  end
+
+  puts "Running through all files in #{target_folder}"
+  batch_start_time = Time.now
+  file_count = 0
+
+  Dir.glob(File.join(target_folder, "**/*.json")).each do |file_path|
+    iterate_json(file_path)
+    file_count += 1
+  end
+
+  batch_end_time = Time.now
+  batch_duration = batch_end_time - batch_start_tim
+  puts "Files processed: #{file_count}"
+  puts "Total batch time: #{'%.2f' % batch_duration} seconds."
+end
+
+trans_loop('raw')
