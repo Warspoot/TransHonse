@@ -1,0 +1,1161 @@
+{
+    "version": 6,
+    "bundle": "NTJJAOBAOLL5QU6FNCJRZ3JZHKAIGVL6",
+    "type": "story",
+    "storyId": "041062001",
+    "title": "ゆるふわ、たったか、始動します",
+    "enTitle": "",
+    "text": [
+        {
+            "jpName": "たい焼き屋",
+            "enName": "",
+            "jpText": "たい焼き、たい焼き、たい焼きはいかがですか～？\r\n残りあと1個だよ！",
+            "enText": "",
+            "nextBlock": 2,
+            "origClipLength": 182,
+            "voiceIdx": 0,
+            "choices": [
+                {
+                    "jpText": "すみません、1つ――",
+                    "enText": "",
+                    "nextBlock": 2
+                }
+            ],
+            "pathId": -4344132595019471783,
+            "blockIdx": 1
+        },
+        {
+            "jpName": "マチカネタンホイザ",
+            "enName": "",
+            "jpText": "たい焼き1つくださ～い！",
+            "enText": "",
+            "nextBlock": 3,
+            "origClipLength": 74,
+            "voiceIdx": 1,
+            "animData": [
+                {
+                    "origLen": 43,
+                    "pathId": -4464896987988308566
+                },
+                {
+                    "origLen": 150,
+                    "pathId": -1113784376616254858
+                }
+            ],
+            "pathId": 2493130083264733838,
+            "blockIdx": 2
+        },
+        {
+            "jpName": "マチカネタンホイザ",
+            "enName": "",
+            "jpText": "……ハッ！\r\nうわばばっ！　すみません！　どうぞどうぞどうぞー！",
+            "enText": "",
+            "nextBlock": 4,
+            "origClipLength": 152,
+            "voiceIdx": 2,
+            "choices": [
+                {
+                    "jpText": "いえいえ、どうぞ",
+                    "enText": "",
+                    "nextBlock": 4
+                }
+            ],
+            "animData": [
+                {
+                    "origLen": 60,
+                    "pathId": -5330300671598836909
+                },
+                {
+                    "origLen": 20,
+                    "pathId": -6852996819000462809
+                },
+                {
+                    "origLen": 55,
+                    "pathId": -7386586324126643824
+                }
+            ],
+            "pathId": -6142151388340300667,
+            "blockIdx": 3
+        },
+        {
+            "jpName": "マチカネタンホイザ",
+            "enName": "",
+            "jpText": "いえでも、でもでも同時でしたし！\r\n……あっ！　そうだ！",
+            "enText": "",
+            "nextBlock": 5,
+            "origClipLength": 158,
+            "voiceIdx": 3,
+            "animData": [
+                {
+                    "origLen": 17,
+                    "pathId": 8446278309951486230
+                },
+                {
+                    "origLen": 20,
+                    "pathId": 8304482029071558867
+                },
+                {
+                    "origLen": 36,
+                    "pathId": 6176031298076778990
+                }
+            ],
+            "pathId": 8519845532340722327,
+            "blockIdx": 4
+        },
+        {
+            "jpName": "マチカネタンホイザ",
+            "enName": "",
+            "jpText": "んー、ほくほくもちもちベリーデリシャス～。\r\nごちそうさまでした！",
+            "enText": "",
+            "nextBlock": 6,
+            "origClipLength": 218,
+            "voiceIdx": 4,
+            "choices": [
+                {
+                    "jpText": "半分もらってごめん",
+                    "enText": "",
+                    "nextBlock": 6
+                },
+                {
+                    "jpText": "半分もらっちゃってごめんね",
+                    "enText": "",
+                    "nextBlock": 6
+                }
+            ],
+            "animData": [
+                {
+                    "origLen": 40,
+                    "pathId": -707734344335379586
+                },
+                {
+                    "origLen": 111,
+                    "pathId": -4868007546980478201
+                }
+            ],
+            "pathId": 6070146879373754580,
+            "blockIdx": 5
+        },
+        {
+            "jpName": "マチカネタンホイザ",
+            "enName": "",
+            "jpText": "いえいえ、半分こってなんか美味しいですから！\r\nそれにしても、学園のトレーナーさんだったんですねぇ。",
+            "enText": "",
+            "nextBlock": 7,
+            "origClipLength": 250,
+            "voiceIdx": 5,
+            "animData": [
+                {
+                    "origLen": 104,
+                    "pathId": 1623480853714565332
+                },
+                {
+                    "origLen": 50,
+                    "pathId": 6448711692225634681
+                }
+            ],
+            "pathId": 981761705022275125,
+            "blockIdx": 6
+        },
+        {
+            "jpName": "マチカネタンホイザ",
+            "enName": "",
+            "jpText": "これもきっとなにかの縁。\r\nまたどこかで会いましょう！",
+            "enText": "",
+            "nextBlock": 8,
+            "origClipLength": 124,
+            "voiceIdx": 6,
+            "animData": [
+                {
+                    "origLen": 15,
+                    "pathId": -3225232433959040476
+                },
+                {
+                    "origLen": 75,
+                    "pathId": 732276146305081211
+                }
+            ],
+            "pathId": -8648223289621253100,
+            "blockIdx": 7
+        },
+        {
+            "jpName": "モノローグ",
+            "enName": "",
+            "jpText": "そんなことがあった日の数日後。",
+            "enText": "",
+            "nextBlock": 9,
+            "origClipLength": 64,
+            "voiceIdx": -1,
+            "animData": [
+                {
+                    "origLen": 20,
+                    "pathId": -5467264213568825875
+                }
+            ],
+            "pathId": -3938906927270634356,
+            "blockIdx": 8
+        },
+        {
+            "jpName": "肉まん屋",
+            "enName": "",
+            "jpText": "肉まん、肉まん、肉まんはいかがですか～？\r\nあと1個ですよ～！",
+            "enText": "",
+            "nextBlock": 10,
+            "origClipLength": 151,
+            "voiceIdx": 7,
+            "choices": [
+                {
+                    "jpText": "すみません、1つ――",
+                    "enText": "",
+                    "nextBlock": 10
+                }
+            ],
+            "pathId": 196084123875258838,
+            "blockIdx": 9
+        },
+        {
+            "jpName": "マチカネタンホイザ",
+            "enName": "",
+            "jpText": "肉まん1つくださ～い！",
+            "enText": "",
+            "nextBlock": 11,
+            "origClipLength": 75,
+            "voiceIdx": 8,
+            "animData": [
+                {
+                    "origLen": 44,
+                    "pathId": -9181374033995549958
+                }
+            ],
+            "pathId": 7985560682124562373,
+            "blockIdx": 10
+        },
+        {
+            "jpName": "マチカネタンホイザ",
+            "enName": "",
+            "jpText": "……ハッ！？\r\nうわばばっ！　すみませ……って、ええ！？　あなたでしたか！",
+            "enText": "",
+            "nextBlock": 12,
+            "origClipLength": 193,
+            "voiceIdx": 9,
+            "animData": [
+                {
+                    "origLen": 35,
+                    "pathId": -6093301366321470515
+                },
+                {
+                    "origLen": 61,
+                    "pathId": 2694862332206617167
+                },
+                {
+                    "origLen": 52,
+                    "pathId": 9066614567492923960
+                }
+            ],
+            "pathId": -9007614886314870937,
+            "blockIdx": 11
+        },
+        {
+            "jpName": "マチカネタンホイザ",
+            "enName": "",
+            "jpText": "はややや～、こんなこともあるんですねぇ。\r\n……今日も、半分こしときます？　ひひ。",
+            "enText": "",
+            "nextBlock": 13,
+            "origClipLength": 267,
+            "voiceIdx": 10,
+            "animData": [
+                {
+                    "origLen": 16,
+                    "pathId": 2438894459051351476
+                },
+                {
+                    "origLen": 20,
+                    "pathId": -2961112026856692161
+                }
+            ],
+            "pathId": -6430116751196749666,
+            "blockIdx": 12
+        },
+        {
+            "jpName": "モノローグ",
+            "enName": "",
+            "jpText": "そんなことを繰り返しているうちに――",
+            "enText": "",
+            "nextBlock": 14,
+            "origClipLength": 68,
+            "voiceIdx": -1,
+            "animData": [
+                {
+                    "origLen": 58,
+                    "pathId": 853113235276141279
+                }
+            ],
+            "pathId": 3091937342802185178,
+            "blockIdx": 13
+        },
+        {
+            "jpName": "マチカネタンホイザ",
+            "enName": "",
+            "jpText": "あ、おはようございます！\r\nそだそだ！　ちょっと見てくださいよ～、この写真！",
+            "enText": "",
+            "nextBlock": 15,
+            "origClipLength": 178,
+            "voiceIdx": 11,
+            "animData": [
+                {
+                    "origLen": 94,
+                    "pathId": -4695252452317221047
+                }
+            ],
+            "pathId": 3955961195665311909,
+            "blockIdx": 14
+        },
+        {
+            "jpName": "マチカネタンホイザ",
+            "enName": "",
+            "jpText": "むふふ、なんとなんと……おニューのクモのぬいぐるみを\r\nゲットしちゃったんです！　これがもうかわいくって！",
+            "enText": "",
+            "nextBlock": 16,
+            "origClipLength": 291,
+            "voiceIdx": 12,
+            "animData": [
+                {
+                    "origLen": 241,
+                    "pathId": -8699584667432540038
+                },
+                {
+                    "origLen": 201,
+                    "pathId": -776286131551013073
+                },
+                {
+                    "origLen": 150,
+                    "pathId": 4994935565373044592
+                }
+            ],
+            "pathId": 6511239835529589804,
+            "blockIdx": 15
+        },
+        {
+            "jpName": "モノローグ",
+            "enName": "",
+            "jpText": "学園ですれ違えば小話をする仲になった。\r\nそんなある日。",
+            "enText": "",
+            "nextBlock": 17,
+            "origClipLength": 81,
+            "voiceIdx": -1,
+            "animData": [
+                {
+                    "origLen": 99,
+                    "pathId": 2266655621532405869
+                },
+                {
+                    "origLen": 145,
+                    "pathId": -5552698614914615071
+                },
+                {
+                    "origLen": 92,
+                    "pathId": 2576506912028103038
+                }
+            ],
+            "pathId": 4478176916239337743,
+            "blockIdx": 16
+        },
+        {
+            "jpName": "モノローグ",
+            "enName": "",
+            "jpText": "ミホノブルボンを筆頭に、\r\n数名のウマ娘が合同で坂路トレーニングを行っていた。",
+            "enText": "",
+            "nextBlock": 18,
+            "origClipLength": 95,
+            "voiceIdx": -1,
+            "animData": [
+                {
+                    "origLen": 23,
+                    "pathId": -2766807059009484578
+                },
+                {
+                    "origLen": 26,
+                    "pathId": 8349258513367553737
+                },
+                {
+                    "origLen": 23,
+                    "pathId": -332516086154124159
+                },
+                {
+                    "origLen": 148,
+                    "pathId": 8235191684844464464
+                },
+                {
+                    "origLen": 148,
+                    "pathId": 1052516404858412754
+                },
+                {
+                    "origLen": 123,
+                    "pathId": 8542666136943972418
+                }
+            ],
+            "pathId": 2501631386529638133,
+            "blockIdx": 17
+        },
+        {
+            "jpName": "ミホノブルボン",
+            "enName": "",
+            "jpText": "坂路ダッシュ1本目達成。\r\n続いて、2本目を開始します。",
+            "enText": "",
+            "nextBlock": 19,
+            "origClipLength": 196,
+            "voiceIdx": 13,
+            "animData": [
+                {
+                    "origLen": 58,
+                    "pathId": -4712031213162251541
+                },
+                {
+                    "origLen": 218,
+                    "pathId": 7686449392447675911
+                },
+                {
+                    "origLen": 83,
+                    "pathId": -1532144634778353862
+                },
+                {
+                    "origLen": 70,
+                    "pathId": -897092158559530620
+                }
+            ],
+            "pathId": -4010475539292365781,
+            "blockIdx": 18
+        },
+        {
+            "jpName": "ウマ娘A",
+            "enName": "",
+            "jpText": "ぜ、は……も、もう行くのぉ！？\r\nむりぃ……！",
+            "enText": "",
+            "nextBlock": 20,
+            "origClipLength": 253,
+            "voiceIdx": 14,
+            "animData": [
+                {
+                    "origLen": 59,
+                    "pathId": -7792226328317565644
+                },
+                {
+                    "origLen": 20,
+                    "pathId": 2807840033443551598
+                }
+            ],
+            "pathId": -7845814208603629639,
+            "blockIdx": 19
+        },
+        {
+            "jpName": "マチカネタンホイザ",
+            "enName": "",
+            "jpText": "ひゃー、きっつ～！",
+            "enText": "",
+            "nextBlock": 21,
+            "origClipLength": 109,
+            "voiceIdx": 15,
+            "animData": [
+                {
+                    "origLen": 29,
+                    "pathId": 6353545702745684569
+                },
+                {
+                    "origLen": 20,
+                    "pathId": -4950021778722165807
+                }
+            ],
+            "pathId": -8427507182390647006,
+            "blockIdx": 20
+        },
+        {
+            "jpName": "ウマ娘B",
+            "enName": "",
+            "jpText": "む……りぃ……！　はぁ～……！\r\n……うぅ、結構スタミナついてきてたと、思ったんだけどなぁ。",
+            "enText": "",
+            "nextBlock": 22,
+            "origClipLength": 453,
+            "voiceIdx": 16,
+            "pathId": 8897764858860708797,
+            "blockIdx": 21
+        },
+        {
+            "jpName": "モノローグ",
+            "enName": "",
+            "jpText": "意気消沈するウマ娘たち。そんな中、マチカネタンホイザは\r\n遅まきながらも2本目の坂路を上がり続けていた。",
+            "enText": "",
+            "nextBlock": 23,
+            "origClipLength": 112,
+            "voiceIdx": -1,
+            "pathId": 4575748489955330484,
+            "blockIdx": 22
+        },
+        {
+            "jpName": "マチカネタンホイザ",
+            "enName": "",
+            "jpText": "はぁ、はぁ、ふぅ、はぁ！",
+            "enText": "",
+            "nextBlock": 24,
+            "origClipLength": 127,
+            "voiceIdx": 17,
+            "animData": [
+                {
+                    "origLen": 180,
+                    "pathId": -6725126205440085946
+                },
+                {
+                    "origLen": 172,
+                    "pathId": 226684649108509393
+                }
+            ],
+            "pathId": 8107559393081979730,
+            "blockIdx": 23
+        },
+        {
+            "jpName": "ミホノブルボン",
+            "enName": "",
+            "jpText": "3本目、200mを追加。\r\n……ふっ！",
+            "enText": "",
+            "nextBlock": 25,
+            "origClipLength": 145,
+            "voiceIdx": 18,
+            "animData": [
+                {
+                    "origLen": 157,
+                    "pathId": -846146856428614033
+                },
+                {
+                    "origLen": 156,
+                    "pathId": -7653426922646252703
+                },
+                {
+                    "origLen": 116,
+                    "pathId": -1343539218736392224
+                }
+            ],
+            "pathId": -2259914240060917210,
+            "blockIdx": 24
+        },
+        {
+            "jpName": "マチカネタンホイザ",
+            "enName": "",
+            "jpText": "わ、私だって～！",
+            "enText": "",
+            "nextBlock": 26,
+            "origClipLength": 110,
+            "voiceIdx": 19,
+            "animData": [
+                {
+                    "origLen": 114,
+                    "pathId": 3391320456246473225
+                },
+                {
+                    "origLen": 44,
+                    "pathId": 3098522807679921045
+                },
+                {
+                    "origLen": 20,
+                    "pathId": 8617113926316074185
+                }
+            ],
+            "pathId": 8479646454155833598,
+            "blockIdx": 25
+        },
+        {
+            "jpName": "マチカネタンホイザ",
+            "enName": "",
+            "jpText": "ふぅ、はぁ、はぁあ～……。あー、3本目、走り切れなかった～。\r\nブルボンさん、やっぱりすごいねぇ――わわっ！",
+            "enText": "",
+            "nextBlock": 27,
+            "origClipLength": 476,
+            "voiceIdx": 20,
+            "animData": [
+                {
+                    "origLen": 4,
+                    "pathId": -1773204389122940251
+                },
+                {
+                    "origLen": 30,
+                    "pathId": -2628688363263611544
+                },
+                {
+                    "origLen": 191,
+                    "pathId": 1854976153873645276
+                }
+            ],
+            "pathId": -4045908851761767065,
+            "blockIdx": 26
+        },
+        {
+            "jpName": "ウマ娘A",
+            "enName": "",
+            "jpText": "大丈夫？",
+            "enText": "",
+            "nextBlock": 28,
+            "origClipLength": 141,
+            "voiceIdx": 21,
+            "animData": [
+                {
+                    "origLen": 31,
+                    "pathId": -8326714900199339188
+                },
+                {
+                    "origLen": 49,
+                    "pathId": -7369603963272488219
+                }
+            ],
+            "pathId": 7524203544996131755,
+            "blockIdx": 27
+        },
+        {
+            "jpName": "マチカネタンホイザ",
+            "enName": "",
+            "jpText": "あはは、大丈夫大丈夫！\r\nちょっと脚がガクガクするだけ。……やっぱりまだまだだな～。",
+            "enText": "",
+            "nextBlock": 29,
+            "origClipLength": 245,
+            "voiceIdx": 22,
+            "animData": [
+                {
+                    "origLen": 66,
+                    "pathId": 4295447826125834463
+                },
+                {
+                    "origLen": 20,
+                    "pathId": -1424713983287551794
+                }
+            ],
+            "pathId": 102752187708113089,
+            "blockIdx": 28
+        },
+        {
+            "jpName": "ウマ娘B",
+            "enName": "",
+            "jpText": "いやいや、ラスト300mくらいまではついていってたじゃん。\r\n十分すごいよ。",
+            "enText": "",
+            "nextBlock": 30,
+            "origClipLength": 210,
+            "voiceIdx": 23,
+            "animData": [
+                {
+                    "origLen": 128,
+                    "pathId": 7909153909757898079
+                },
+                {
+                    "origLen": 86,
+                    "pathId": -6842674444254643199
+                }
+            ],
+            "pathId": -5701635975912360583,
+            "blockIdx": 29
+        },
+        {
+            "jpName": "モノローグ",
+            "enName": "",
+            "jpText": "ミホノブルボンのハードトレーニングは学内でもトップレベル。\r\n実際ほとんどのウマ娘は1本目でギブアップしていたが――",
+            "enText": "",
+            "nextBlock": 31,
+            "origClipLength": 120,
+            "voiceIdx": -1,
+            "choices": [
+                {
+                    "jpText": "（目立つタイプではないけど、地力が高い）",
+                    "enText": "",
+                    "nextBlock": 31
+                }
+            ],
+            "animData": [
+                {
+                    "origLen": 60,
+                    "pathId": -2400190839074512988
+                }
+            ],
+            "pathId": -1534354853509392093,
+            "blockIdx": 30
+        },
+        {
+            "jpName": "モノローグ",
+            "enName": "",
+            "jpText": "そんなことがあった日の、また数日後。",
+            "enText": "",
+            "nextBlock": 32,
+            "origClipLength": 68,
+            "voiceIdx": -1,
+            "animData": [
+                {
+                    "origLen": 60,
+                    "pathId": 3175693078568159472
+                },
+                {
+                    "origLen": 16,
+                    "pathId": 716302668863036638
+                }
+            ],
+            "pathId": 4152985833579397441,
+            "blockIdx": 31
+        },
+        {
+            "jpName": "ライスシャワー",
+            "enName": "",
+            "jpText": "はぁ、はぁ、はぁ……！",
+            "enText": "",
+            "nextBlock": 33,
+            "origClipLength": 69,
+            "voiceIdx": 24,
+            "animData": [
+                {
+                    "origLen": 127,
+                    "pathId": -6437021457819097124
+                },
+                {
+                    "origLen": 103,
+                    "pathId": -4820119376220696883
+                }
+            ],
+            "pathId": -8626104799406059272,
+            "blockIdx": 32
+        },
+        {
+            "jpName": "ウマ娘A",
+            "enName": "",
+            "jpText": "ねぇ、ライスさんたちもう2時間以上やってない？\r\nインターバル走だっけ……。2人ともすごいね。",
+            "enText": "",
+            "nextBlock": 34,
+            "origClipLength": 314,
+            "voiceIdx": 25,
+            "animData": [
+                {
+                    "origLen": 348,
+                    "pathId": 4285289499229014059
+                },
+                {
+                    "origLen": 347,
+                    "pathId": -2874888307964960214
+                }
+            ],
+            "pathId": -5771265785620691913,
+            "blockIdx": 33
+        },
+        {
+            "jpName": "マチカネタンホイザ",
+            "enName": "",
+            "jpText": "ついてくっ、ついてくっ、ついてっ、てっ……！\r\nてぁ～、体力限界……！",
+            "enText": "",
+            "nextBlock": 35,
+            "origClipLength": 278,
+            "voiceIdx": 26,
+            "animData": [
+                {
+                    "origLen": 292,
+                    "pathId": 5556915876417653904
+                },
+                {
+                    "origLen": 178,
+                    "pathId": -2081499065266512202
+                },
+                {
+                    "origLen": 185,
+                    "pathId": -6999425202824184438
+                }
+            ],
+            "pathId": -6452368830040655112,
+            "blockIdx": 34
+        },
+        {
+            "jpName": "マチカネタンホイザ",
+            "enName": "",
+            "jpText": "はぁ、はぁ、はぁ～……。\r\nダメだぁ～！　スタミナはそこそこ自信あったんだけどなぁ。",
+            "enText": "",
+            "nextBlock": 36,
+            "origClipLength": 319,
+            "voiceIdx": 27,
+            "animData": [
+                {
+                    "origLen": 23,
+                    "pathId": 3277140237922343010
+                },
+                {
+                    "origLen": 36,
+                    "pathId": 1234719901495233163
+                },
+                {
+                    "origLen": 23,
+                    "pathId": -4408953513184276969
+                }
+            ],
+            "pathId": -6325206002677374909,
+            "blockIdx": 35
+        },
+        {
+            "jpName": "ウマ娘A",
+            "enName": "",
+            "jpText": "いやいや、十分すごいって。\r\nナイスファイトだよ、マチタン。",
+            "enText": "",
+            "nextBlock": 37,
+            "origClipLength": 179,
+            "voiceIdx": 28,
+            "animData": [
+                {
+                    "origLen": 111,
+                    "pathId": 6794218469118457165
+                },
+                {
+                    "origLen": 145,
+                    "pathId": -7243703799618474291
+                }
+            ],
+            "pathId": 8086944396107433121,
+            "blockIdx": 36
+        },
+        {
+            "jpName": "マチカネタンホイザ",
+            "enName": "",
+            "jpText": "いや～、そんな。ありがとうございますぅ……。\r\n――と、おお！　あなたはいつぞやのっ。",
+            "enText": "",
+            "nextBlock": 38,
+            "origClipLength": 232,
+            "voiceIdx": 29,
+            "animData": [
+                {
+                    "origLen": 40,
+                    "pathId": 1972553434837161085
+                },
+                {
+                    "origLen": 20,
+                    "pathId": -9047804374100506707
+                },
+                {
+                    "origLen": 18,
+                    "pathId": -5843184387024928042
+                }
+            ],
+            "pathId": 3353862800936772386,
+            "blockIdx": 37
+        },
+        {
+            "jpName": "マチカネタンホイザ",
+            "enName": "",
+            "jpText": "情けないところ見られちゃったなー。\r\n最後までついてこうと思ったんですけどね。えへへ。",
+            "enText": "",
+            "nextBlock": 39,
+            "origClipLength": 236,
+            "voiceIdx": 30,
+            "animData": [
+                {
+                    "origLen": 25,
+                    "pathId": 2914528874860778819
+                }
+            ],
+            "pathId": 1337219192628310040,
+            "blockIdx": 38
+        },
+        {
+            "jpName": "マチカネタンホイザ",
+            "enName": "",
+            "jpText": "でもでも、長距離のコツとかもわかった気がするし、うん。\r\nよいトレーニングでした！　と、忘れないうちにメモメモ……。",
+            "enText": "",
+            "nextBlock": 40,
+            "origClipLength": 291,
+            "voiceIdx": 31,
+            "animData": [
+                {
+                    "origLen": 35,
+                    "pathId": -4071843510045510378
+                },
+                {
+                    "origLen": 16,
+                    "pathId": -1688481902008348501
+                }
+            ],
+            "pathId": 384939802558732673,
+            "blockIdx": 39
+        },
+        {
+            "jpName": "マチカネタンホイザ",
+            "enName": "",
+            "jpText": "もうちょっとスタミナ系増やしてみようかな。\r\n空気抵抗の少ないフォームの練習もしときたいし……むん。",
+            "enText": "",
+            "nextBlock": 41,
+            "origClipLength": 275,
+            "voiceIdx": 32,
+            "animData": [
+                {
+                    "origLen": 286,
+                    "pathId": -7127304333714535470
+                }
+            ],
+            "pathId": 6333575702729420572,
+            "blockIdx": 40
+        },
+        {
+            "jpName": "マチカネタンホイザ",
+            "enName": "",
+            "jpText": "そうだ、トレーナーさん！\r\nあのぅ、ちょっとだけアドバイスもらえたりしませんか？",
+            "enText": "",
+            "nextBlock": 42,
+            "origClipLength": 195,
+            "voiceIdx": 33,
+            "animData": [
+                {
+                    "origLen": 73,
+                    "pathId": 2523842307336443429
+                }
+            ],
+            "pathId": -6956155477705282121,
+            "blockIdx": 41
+        },
+        {
+            "jpName": "マチカネタンホイザ",
+            "enName": "",
+            "jpText": "今月の目当ては『スタミナつけるぞ！』なので、\r\n遅筋をたくさん鍛えていきたいんです！",
+            "enText": "",
+            "nextBlock": 43,
+            "origClipLength": 205,
+            "voiceIdx": 34,
+            "animData": [
+                {
+                    "origLen": 51,
+                    "pathId": 3807322648143340307
+                },
+                {
+                    "origLen": 20,
+                    "pathId": -6300576274529229811
+                }
+            ],
+            "pathId": -4200135768310808004,
+            "blockIdx": 42
+        },
+        {
+            "jpName": "モノローグ",
+            "enName": "",
+            "jpText": "渡されたメモ帳を見ると……日ごとにきちんと分けられた、\r\nそこそこハードな自主トレーニング計画が記載されていた。",
+            "enText": "",
+            "nextBlock": 44,
+            "origClipLength": 118,
+            "voiceIdx": -1,
+            "choices": [
+                {
+                    "jpText": "え、えらい！",
+                    "enText": "",
+                    "nextBlock": 44
+                }
+            ],
+            "animData": [
+                {
+                    "origLen": 15,
+                    "pathId": 1337487726728519082
+                }
+            ],
+            "pathId": -7370464386227170761,
+            "blockIdx": 43
+        },
+        {
+            "jpName": "マチカネタンホイザ",
+            "enName": "",
+            "jpText": "でへへ。ありがとうございます～。",
+            "enText": "",
+            "nextBlock": 45,
+            "origClipLength": 101,
+            "voiceIdx": 35,
+            "animData": [
+                {
+                    "origLen": 74,
+                    "pathId": 3920838426422117017
+                }
+            ],
+            "pathId": 1836156251929024406,
+            "blockIdx": 44
+        },
+        {
+            "jpName": "マチカネタンホイザ",
+            "enName": "",
+            "jpText": "そのぅ、私ってトップと戦うにはまだまだ実力が足りてなくって、\r\nだからって無茶なトレーニングができるタイプでもないんですよね。",
+            "enText": "",
+            "nextBlock": 46,
+            "origClipLength": 332,
+            "voiceIdx": 36,
+            "animData": [
+                {
+                    "origLen": 39,
+                    "pathId": -5642088029792816900
+                },
+                {
+                    "origLen": 50,
+                    "pathId": 3035737945335034034
+                },
+                {
+                    "origLen": 45,
+                    "pathId": -2287201269686999487
+                }
+            ],
+            "pathId": -436068643137602538,
+            "blockIdx": 45
+        },
+        {
+            "jpName": "マチカネタンホイザ",
+            "enName": "",
+            "jpText": "だから、できることからコツコツと～、って気持ちでやって\r\nるんです。そしたら絶対、いつか勝てるようになると思うので！",
+            "enText": "",
+            "nextBlock": 47,
+            "origClipLength": 279,
+            "voiceIdx": 37,
+            "choices": [
+                {
+                    "jpText": "！",
+                    "enText": "",
+                    "nextBlock": 47
+                }
+            ],
+            "animData": [
+                {
+                    "origLen": 15,
+                    "pathId": 5764711228456881556
+                },
+                {
+                    "origLen": 67,
+                    "pathId": 7500298642856687361
+                },
+                {
+                    "origLen": 16,
+                    "pathId": -6786120640267397450
+                },
+                {
+                    "origLen": 66,
+                    "pathId": 7862685227335975134
+                }
+            ],
+            "pathId": 2689642373338990681,
+            "blockIdx": 46
+        },
+        {
+            "jpName": "モノローグ",
+            "enName": "",
+            "jpText": "驚くほど前向きで、頑張り屋で、地力が高い。\r\nここ数日少し見ただけでも、彼女の性質は十分にわかった。",
+            "enText": "",
+            "nextBlock": 48,
+            "origClipLength": 110,
+            "voiceIdx": -1,
+            "animData": [
+                {
+                    "origLen": 123,
+                    "pathId": 959597416493682107
+                }
+            ],
+            "pathId": -5036685492454576322,
+            "blockIdx": 47
+        },
+        {
+            "jpName": "モノローグ",
+            "enName": "",
+            "jpText": "決して目立つタイプではない。\r\nが、今後の成長次第では大きく化けそうにも思える。",
+            "enText": "",
+            "nextBlock": 49,
+            "origClipLength": 97,
+            "voiceIdx": -1,
+            "animData": [
+                {
+                    "origLen": 48,
+                    "pathId": 6656928008211316806
+                }
+            ],
+            "pathId": 1002845515137326534,
+            "blockIdx": 48
+        },
+        {
+            "jpName": "マチカネタンホイザ",
+            "enName": "",
+            "jpText": "？　どうかしました？",
+            "enText": "",
+            "nextBlock": 50,
+            "origClipLength": 68,
+            "voiceIdx": 38,
+            "choices": [
+                {
+                    "jpText": "俺と契約してくれないか？",
+                    "enText": "",
+                    "nextBlock": 50
+                },
+                {
+                    "jpText": "私と契約してくれないかな？",
+                    "enText": "",
+                    "nextBlock": 50
+                }
+            ],
+            "animData": [
+                {
+                    "origLen": 33,
+                    "pathId": 5672889892310900739
+                },
+                {
+                    "origLen": 20,
+                    "pathId": -3293202222777456957
+                },
+                {
+                    "origLen": 60,
+                    "pathId": -5431407055630898680
+                }
+            ],
+            "pathId": 2130168906196523820,
+            "blockIdx": 49
+        },
+        {
+            "jpName": "マチカネタンホイザ",
+            "enName": "",
+            "jpText": "契約？\r\n…………あっ、もしかしてオファーですか！？",
+            "enText": "",
+            "nextBlock": 51,
+            "origClipLength": 181,
+            "voiceIdx": 39,
+            "animData": [
+                {
+                    "origLen": 44,
+                    "pathId": 6443849779465562516
+                },
+                {
+                    "origLen": 36,
+                    "pathId": -5944817533420508619
+                }
+            ],
+            "pathId": 5259462844938782372,
+            "blockIdx": 50
+        },
+        {
+            "jpName": "マチカネタンホイザ",
+            "enName": "",
+            "jpText": "わあ～！　もちろんです！　半分こ友だちのあなたなら、\r\nウェルカムカムですよ！　これからどうぞよろしくお願いします！",
+            "enText": "",
+            "nextBlock": 52,
+            "origClipLength": 297,
+            "voiceIdx": 40,
+            "animData": [
+                {
+                    "origLen": 12,
+                    "pathId": -4575029430559364002
+                },
+                {
+                    "origLen": 20,
+                    "pathId": -6754788902026495593
+                }
+            ],
+            "pathId": -8189389767217677419,
+            "blockIdx": 51
+        },
+        {
+            "jpName": "モノローグ",
+            "enName": "",
+            "jpText": "こうして、『普通』だけどちょっと変な、\r\nマチカネタンホイザとの日々が始まったのだった。",
+            "enText": "",
+            "nextBlock": -1,
+            "origClipLength": 102,
+            "voiceIdx": -1,
+            "animData": [
+                {
+                    "origLen": 60,
+                    "pathId": -3291190199719306025
+                }
+            ],
+            "pathId": 3312209484425036952,
+            "blockIdx": 52
+        }
+    ],
+    "modified": 1762670824
+}
