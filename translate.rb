@@ -3,6 +3,7 @@ require 'uri'
 require 'httparty'
 require 'toml-rb'
 require 'fileutils'
+require 'zip'
 
 config = TomlRB.load_file('config.toml')
 $server = config['server']
@@ -12,6 +13,7 @@ dictionary = File.read('dictionary.json')
 $dictionary_str = JSON.parse(dictionary)
 $file_count = 0
 $skip_count = 0
+$newly_translated_files = []
 
 def iterate_json(file_path)
     puts "Reading #{file_path} JSON File..."
@@ -28,6 +30,15 @@ def iterate_json(file_path)
         $skip_count += 1
         return
     end    
+
+    title = file_json["title"]
+    if title && !title.empty?
+            enTitle = translate_api(title)
+            file_json["title"] = enTitle
+            puts "Story Title: #{enTitle}"
+        else
+            puts "No title"
+        end
 
     text.each_with_index do |text, text_index|
         #raw line info
@@ -62,9 +73,10 @@ def iterate_json(file_path)
         end
     end
 
-    File.write(output_path, JSON.dump(JSON.pretty_generate(file_json)))
+    File.write(output_path, JSON.pretty_generate(file_json))
     puts "Saved to: #{output_path}"
     $file_count += 1
+    $newly_translated_files << output_path
 end
 
 def char_system_text()
@@ -115,8 +127,10 @@ def char_system_text()
     end
 
     FileUtils.mkdir_p("translated")
-    File.write("translated/character_system_text.json", JSON.pretty_generate(file_raw_json))
+    output_path = "translated/character_system_text.json"
+    File.write(output_path, JSON.pretty_generate(file_raw_json))
     puts "Completed translating character system text"
+    $newly_translated_files << output_path if $file_count > 0
     batch_end_time = Time.now
     batch_duration = batch_end_time - batch_start_time
     puts "Lines processed: #{$file_count}"
@@ -142,13 +156,45 @@ def translate_api(rawText)
         top_k: $server['top_k'],
         repetition__penalty: $server['repetition_penalty']
     }
+    
+    attempts = 0
+    while attempts <= $server['retry_attempts']
+        response = HTTParty.post($url,
+            body: payload.to_json,
+            headers:{'Content-Type' => 'application/json'},
+        )
+        returned_response = response["choices"][0]['message']['content']
+        if returned_response.include?("###")
+            attempts += 1
+            puts "Found junk output, retrying... (Attempt #{attempts})"
+        else
+            return returned_response
+        end
+    end
+end
 
-    response = HTTParty.post($url,
-        body: payload.to_json,
-        headers:{'Content-Type' => 'application/json'},
-    )
-    returned_response = response["choices"][0]['message']['content']
-    return returned_response
+def create_update_zip()
+    return if $newly_translated_files.empty?
+    FileUtils.mkdir_p("updates")
+
+    # Find next available number
+    zip_number = 1
+    while File.exist?("updates/update_#{zip_number}.zip")
+        zip_number += 1
+    end
+
+    zip_filename = "updates/update_#{zip_number}.zip"
+    puts "\nCreating #{zip_filename} with #{$newly_translated_files.length} file(s)..."
+
+    Zip::File.open(zip_filename, create: true) do |zipfile|
+        $newly_translated_files.each do |file_path|
+            zip_path = file_path.gsub('\\', '/').sub(/^translated\//, '')
+            zipfile.add(zip_path, file_path)
+            puts "  Added: #{zip_path}"
+        end
+    end
+
+    puts "Successfully created #{zip_filename}"
 end
 
 def trans_loop(target_folder)
@@ -175,18 +221,22 @@ end
 
 def main()
     puts "TransHonse LLM Slop \n Translate Folder (f) or Character System Text (c) or leave blank for both."
-    input = gets
-    if input == "folder" || "f"
+    input = gets.chomp.downcase
+
+    puts "Create update zip after translation? (y/n)"
+    create_zip = gets.chomp.downcase == 'y'
+
+    if input == "folder" || input == "f"
         trans_loop($server['raw_folder'])
-    end
-    if input == "character system text" || "c"
+    elsif input == "character system text" || input == "c"
+        char_system_text()
+    elsif input == ""
+        trans_loop($server['raw_folder'])
         char_system_text()
     end
-    if input == ""
-        trans_loop($server['raw_folder'])
-        char_system_text()
-    end
-    puts "All tasks complete"    
+
+    puts "All tasks complete"
+    create_update_zip() if create_zip
 end
 
 main()
