@@ -14,6 +14,7 @@ GEM
     multi_xml (0.7.2)
       bigdecimal (~> 3.1)
     racc (1.8.1)
+    rubyzip (3.2.2)
     sqlite3 (2.8.1-x64-mingw-ucrt)
     toml-rb (4.1.0)
       citrus (~> 3.0, > 3.0)
@@ -26,6 +27,7 @@ DEPENDENCIES
   fileutils (~> 1.8)
   httparty (~> 0.23.2)
   json (~> 2.18)
+  rubyzip (~> 3.2)
   sqlite3 (~> 2.8)
   toml-rb (~> 4.1)
 
