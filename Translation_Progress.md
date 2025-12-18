@@ -1,6 +1,6 @@
 # Translation QC Progress Tracker
 
-Generated: 2025-12-18 15:53:54
+Generated: 2025-12-18 15:58:23
 
 ---
 
@@ -8,9 +8,9 @@ Generated: 2025-12-18 15:53:54
 
 - **Story Files**: 12771 files
 - **Home Timeline Files**: 723 files
-- **Other Files**: 3 files
+- **Other Files**: 2 files
 
-**Total**: 13497 files (3 QC'd, 13494 remaining)
+**Total**: 13496 files (0 QC'd, 13496 remaining)
 
 ---
 
@@ -22,7 +22,7 @@ Total: 212 files
 
 | ID | Progress | Status | Notes |
 |----|----------|--------|-------|
-| 1029 | 3/7 | 🔄 In Progress | |
+| 1029 | 0/7 | ⬜ Not Started | |
 | 1042 | 0/7 | ⬜ Not Started | |
 | 1044 | 0/7 | ⬜ Not Started | |
 | 1051 | 0/7 | ⬜ Not Started | |
@@ -942,12 +942,6 @@ Total: 3 files
 | File | Lines | Status | Notes |
 |------|-------|--------|-------|
 | `text_data_dict.json` | 341 | ⬜ Not Started | |
-
-## Other Files
-
-| File | Lines | Status | Notes |
-|------|-------|--------|-------|
-| `config.json` | 12 | ⬜ Not Started | |
 
 ---
 
